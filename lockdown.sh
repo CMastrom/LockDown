@@ -50,7 +50,7 @@ if [ "$1" == "" ]; then
 fi
 
 # Check if directory:
-if [ -d $1 ]; then
+if [ -d "$1" ]; then
 	successMsg "Is a directory, creating a tar.gz file to be gpg symmetrically encrypted.";
 	folderName="${1%/}";
 	checkPreviousCmd;
@@ -71,7 +71,7 @@ if [ -d $1 ]; then
 fi
 
 # If not directory, check if file:
-if [ -f $1 ]; then
+if [ -f "$1" ]; then
 	successMsg "Is a file, gpg symmetrically encrypting the file as ${1}.gpg";
 	copyOGFile "${1}";
 	checkPreviousCmd;
