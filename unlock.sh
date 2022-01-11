@@ -40,7 +40,7 @@ shasum=$(sha256sum "${1}");
 hashsum=${shasum/ *};
 line_index_to_be_removed=-1;
 line_count=0;
-LOCKDOWN_DB_FILE="${HOME}/Applications/lockdowndb.txt";
+LOCKDOWN_DB_FILE="$(dirname $(realpath $0))/lockdowndb.txt";
 
 while IFS= read -r line <&5; do
 	line_count=$((line_count + 1));

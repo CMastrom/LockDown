@@ -28,7 +28,7 @@ function saveChecksum {
 	logMsg "Hashing file contents and storing for future checksum (when decrypting it back to cleartext).";
 	shasum=$(sha256sum "${1}");
 	shasum=${shasum/ *};
-	echo "${shasum}  ${2}" >> ${HOME}/Applications/lockdowndb.txt;
+	echo "${shasum}  ${2}" >> $(dirname $(realpath $0))/lockdowndb.txt;
 }
 
 function copyOGFile {
